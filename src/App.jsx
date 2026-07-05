@@ -1,16 +1,13 @@
-import UserDetails from "./Day-1 jsx and components/UserDetails";
-import UserInfo from "./Day-1 jsx and components/UserInfo";
+// import UserDetails from "./Day-1 jsx and components/UserDetails";
+// import UserInfo from "./Day-1 jsx and components/UserInfo";
+// import UserDetails from "./Day-2 Props/UserDetails";
+
+import ProductList from "./Day-3 Index as a key/ProductList";
 
 const App = () => {
-  const data1 = "Abra ka Dabra";
-
   return (
     <div id="app">
-      <h1>App Component</h1>
-
-      <UserDetails name="Shresth Rajput" age={27} data1={data1} />
-
-      <UserInfo />
+      <ProductList />
     </div>
   );
 };
