@@ -4,9 +4,11 @@
 // import ProductList from "./Day-3 Index as a key/ProductList";
 // import Parent from "./Day-4 Props Pattern/Parent";
 // import Parent from "./Day-4 Props Drilling/Parent";
+// import Counter from "./Day-5 useState hook/Counter";
+// import ToggleComponent from "./Day-5 useState hook/ToggleComponent";
+import ToggleComponent from "./Day-6 Conditional Rendering/ToogleComponent";
 
-import Counter from "./Day-5 useState hook/Counter";
-import ToggleComponent from "./Day-5 useState hook/ToggleComponent";
+
 
 
 

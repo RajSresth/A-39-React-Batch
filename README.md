@@ -347,7 +347,7 @@ const [state, setState] = useState(initialValue);
 
 **Conditional Rendering** is the technique of rendering different UI elements or components based on certain conditions.
 
-- Uses `if-else`, ternary operator `? :`, or logical (short-circuit) operator `&&`
+- Uses `if-else`, ternary operator `? :`, or logical (short-circuit) operator `&&` 
 
 ---
 
