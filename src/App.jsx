@@ -6,17 +6,15 @@
 // import Parent from "./Day-4 Props Drilling/Parent";
 // import Counter from "./Day-5 useState hook/Counter";
 // import ToggleComponent from "./Day-5 useState hook/ToggleComponent";
-import ToggleComponent from "./Day-6 Conditional Rendering/ToogleComponent";
-
-
-
-
-
+// import ToggleComponent from "./Day-6 Conditional Rendering/ToogleComponent";
+// import AdvancedCounter from "./Day-7 useState Advanced/AdvancedCounter";
+import LazyInitializer from "./Day-7 useState Advanced/LazyInitializer";
+import LazyInitializer2 from "./Day-7 useState Advanced/LazyInitializer2";
 
 const App = () => {
   return (
     <div id="app">
-      <ToggleComponent />
+      <LazyInitializer2 />
     </div>
   );
 };
