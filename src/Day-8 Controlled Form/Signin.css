@@ -1,0 +1,84 @@
+.singin__container{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+#signinForm{
+    width: 100%;
+    max-width: 400px;
+    border: 2px solid lightgray;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.singin__top{
+    padding: 10px 0px;
+    text-align: center;
+}
+
+.singin__top h2{
+    margin-bottom: 5px;
+    font-size: 30px;
+    letter-spacing:2px;
+}
+
+.singin__top p{
+    color: grey;
+}
+
+
+.field__container{
+    padding: 10px 0px;
+}
+
+.field__container input{
+    width: 100%;
+    padding: 10px 8px;
+    font-size: 16px;
+    margin-top: 5px;
+    border-radius: 8px;
+}
+
+.field__container label{
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1.25px;
+}
+
+.field__container label sup{
+    color: crimson;
+    font-size: 16px;
+}
+
+.button__container{
+    padding: 15px 0px;
+}
+
+.button__container button{
+    width: 100%;
+     padding: 10px 0;
+     border: none;
+     outline: none;
+     color: white;
+     background-color: #222;
+     font-size: 16px;
+     border-radius: 8px;
+}
+
+.button__container button:nth-of-type(2){
+    margin-top: 10px;
+}
+
+.signin__bottom{
+    text-align: center;
+    color: grey;
+    margin-top: 10px;
+}
+
+.signin__bottom a{
+    color: blue;
+    text-decoration: none;
+}

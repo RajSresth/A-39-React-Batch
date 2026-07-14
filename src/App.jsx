@@ -1,3 +1,5 @@
+
+
 // import UserDetails from "./Day-1 jsx and components/UserDetails";
 // import UserInfo from "./Day-1 jsx and components/UserInfo";
 // import UserDetails from "./Day-2 Props/UserDetails";
@@ -8,13 +10,19 @@
 // import ToggleComponent from "./Day-5 useState hook/ToggleComponent";
 // import ToggleComponent from "./Day-6 Conditional Rendering/ToogleComponent";
 // import AdvancedCounter from "./Day-7 useState Advanced/AdvancedCounter";
-import LazyInitializer from "./Day-7 useState Advanced/LazyInitializer";
-import LazyInitializer2 from "./Day-7 useState Advanced/LazyInitializer2";
+// import LazyInitializer from "./Day-7 useState Advanced/LazyInitializer";
+// import LazyInitializer2 from "./Day-7 useState Advanced/LazyInitializer2";
+import Sigin from "./Day-8 Controlled Form/Sigin";
+
+
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   return (
     <div id="app">
-      <LazyInitializer2 />
+      <Sigin />
+      <ToastContainer />
     </div>
   );
 };
