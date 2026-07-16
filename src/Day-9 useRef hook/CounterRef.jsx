@@ -1,9 +1,12 @@
 import {useState, useRef} from 'react'
 
 const CounterRef = () => {
-    const [count,setCount] = useState(0);
-    const countRef = useRef(0)
-   
+
+  if(a>10)
+  {
+      const [count,setCount] = useState(0);
+     const countRef = useRef(0);  
+  }
 
 
     console.log("CounterRef Component");

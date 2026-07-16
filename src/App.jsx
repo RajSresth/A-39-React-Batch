@@ -15,15 +15,17 @@
 // import CounterRef from "./Day-9 useRef hook/CounterRef";
 // import InputRef from "./Day-9 useRef hook/InputRef";
 // import TimerRef from "./Day-9 useRef hook/TimerRef";
+// import Signin from "./Day-9 Uncontrolled Forms/Signin";
+// import { ToastContainer } from "react-toastify";
 
-import Signin from "./Day-9 Uncontrolled Forms/Signin";
-import { ToastContainer } from "react-toastify";
+import Parent from "./Day-10 useEffect Hook/Parent";
 
 const App = () => {
   return (
     <div id="app">
-      <Signin />
-      <ToastContainer />
+      {/* <Signin />
+      <ToastContainer /> */}
+      <Parent/>
     </div>
   );
 };

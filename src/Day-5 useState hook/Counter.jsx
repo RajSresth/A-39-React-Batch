@@ -4,6 +4,13 @@ import {useState} from "react"
 const Counter = () => {
     const [count, setCount] = useState(0); // arr = [state, updatedFunction]
 
+    // ! Never call a hook inside any conditions or loops
+    // if(count>2)
+    // {
+    //     const [name,setName] = useState("Raj");
+    // }
+    const [email, setEmail] = useState("rajshresth@gmail.com")
+
     const handleClick = () => {
         setCount(count + 1);
     }
