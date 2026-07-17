@@ -1,0 +1,96 @@
+/*--------------------------
+    Shimmer UI
+---------------------------*/
+.shimmer__container{
+    padding: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.shimmer__container .box{
+    width: 230px;
+    height: 280px;
+    background-color: lightgrey;
+    border-radius: 15px;
+}
+
+
+/* --------------------------
+      Product Card
+----------------------------*/
+.home__container{
+    padding: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.product__card{
+    width: 230px;
+    height: auto;
+    border-radius: 15px;
+    border: 1px solid lightgrey;
+    padding: 15px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.product__card .profile{
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    border: inherit;
+    border-radius:inherit;
+}
+
+.product__card .profile img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.product__card .info
+{
+    padding: 5px 0 0;
+}
+.product__title{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.product__description{
+    font-size: 14px;
+    padding: 5px 0px;
+}
+
+.product__category{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: white;
+    background-color: #222;
+    padding: 2px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.product__price{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product__card .info button{
+    width: 100%;
+    padding: 7px 0px;
+    border: none;
+    color: white;
+    background-color: #222;
+    border-radius: 5px;
+}

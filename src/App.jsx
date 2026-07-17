@@ -17,15 +17,16 @@
 // import TimerRef from "./Day-9 useRef hook/TimerRef";
 // import Signin from "./Day-9 Uncontrolled Forms/Signin";
 // import { ToastContainer } from "react-toastify";
+// import Parent from "./Day-10 useEffect Hook/Parent";
 
-import Parent from "./Day-10 useEffect Hook/Parent";
+import Home from "./Day-11 useEffect Hook Part-2/Home";
 
 const App = () => {
   return (
     <div id="app">
       {/* <Signin />
       <ToastContainer /> */}
-      <Parent/>
+      <Home/>
     </div>
   );
 };
