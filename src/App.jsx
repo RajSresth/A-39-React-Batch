@@ -18,15 +18,16 @@
 // import Signin from "./Day-9 Uncontrolled Forms/Signin";
 // import { ToastContainer } from "react-toastify";
 // import Parent from "./Day-10 useEffect Hook/Parent";
+// import Home from "./Day-11 useEffect Hook Part-2/Home";
 
-import Home from "./Day-11 useEffect Hook Part-2/Home";
+import Parent from "./Day-12 useEffect Revision/Parent";
 
 const App = () => {
   return (
     <div id="app">
       {/* <Signin />
       <ToastContainer /> */}
-      <Home/>
+      {/* <Parent /> */}
     </div>
   );
 };
