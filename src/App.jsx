@@ -19,15 +19,17 @@
 // import { ToastContainer } from "react-toastify";
 // import Parent from "./Day-10 useEffect Hook/Parent";
 // import Home from "./Day-11 useEffect Hook Part-2/Home";
+// import Parent from "./Day-12 useEffect Revision/Parent";
+// import Wrong from "./Day-13 useEffect Hook Part-3/Wrong";
 
-import Parent from "./Day-12 useEffect Revision/Parent";
+import ProductPage from "./Day-13 useEffect Hook Part-3/ProductPage";
+
+
 
 const App = () => {
   return (
     <div id="app">
-      {/* <Signin />
-      <ToastContainer /> */}
-      {/* <Parent /> */}
+      <ProductPage />
     </div>
   );
 };
