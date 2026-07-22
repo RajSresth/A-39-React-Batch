@@ -1425,7 +1425,11 @@ useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot?)
 
 **Medium Link:** https://medium.com/@ignatovich.dm/usesyncexternalstore-synchronizing-external-state-with-react-components-bc4e2b27338f
 
-## 101. Want to become Senior Frontend Engineer?
+
+
+## 101. Difference between useEffect and useLayoutEffect ?
+
+## 102. Want to become Senior Frontend Engineer?
 
 **Error Handling:** https://javascript.info/try-catch
 **GraphQL with React:** https://www.apollographql.com/docs/react

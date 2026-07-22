@@ -21,15 +21,15 @@
 // import Home from "./Day-11 useEffect Hook Part-2/Home";
 // import Parent from "./Day-12 useEffect Revision/Parent";
 // import Wrong from "./Day-13 useEffect Hook Part-3/Wrong";
+// import ProductPage from "./Day-13 useEffect Hook Part-3/ProductPage";
+// import ToggleComponent from "./Day-14 useEffect vs useLayoutEffect/ToggleComponent";
 
-import ProductPage from "./Day-13 useEffect Hook Part-3/ProductPage";
-
-
+import Parent from "./Day-14 React.memo HOC/Parent";
 
 const App = () => {
   return (
     <div id="app">
-      <ProductPage />
+      <Parent />
     </div>
   );
 };
