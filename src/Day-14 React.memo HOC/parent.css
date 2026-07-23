@@ -1,0 +1,67 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.parent__container{
+    width: 100%;
+    max-width: 500px;
+    height: 500px;
+    border-radius: 15px;
+    border: 2px solid black;
+    padding: 50px;
+}
+
+.parent__container h2{
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+/*--------------------------
+      Searchbar Design
+----------------------------*/
+.parent__container input{
+    width: 100%;
+    padding: 8px 16px;
+    font-size: 16px;
+}
+
+/*--------------------------
+      Counter Design
+----------------------------*/
+
+.parent__container .counter__container{
+    text-align: center;
+}
+
+.parent__container h3{
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.parent__container button{
+    padding: 10px 50px;
+    background-color: #222;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}
+
+/*--------------------------
+      Child Component Design
+----------------------------*/
+
+.child__container{
+    width: 100%;
+    background-color: wheat;
+    padding: 20px;
+    height: fit-content;
+    border-radius: 15px;
+    margin-top: 45px;
+    text-align: center;
+}
+
+.child__container h4{
+ font-size: 18px;
+}

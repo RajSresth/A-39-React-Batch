@@ -1,19 +1,26 @@
-import React, { memo } from "react";
+import React from 'react'
 
-const Child = ({ user }) => {
-  console.log("Child Render");
+const Child = ({result}) => {
+  
+
+  
   return (
-    <div>
-      <h2>Child</h2>
-      {/* <h4>Search Query: {search}</h4> */}
-      <h4>Fullname: {user.fullname}</h4>
-      <h4>Age: {user.age}</h4>
+    <div className='child__container'>
+      <h3>Child Component</h3>
+      <h4>Result: {result}</h4>     
     </div>
-  );
-};
+  )
+}
 
-export default memo(Child, (prevProp, nextProp) => {
-  return (
-    prevProp.fullname === nextProp.fullname && prevProp.age === nextProp.age
-  );
-});
+
+export default React.memo(Child);
+
+/**
+props = {
+        user : {
+          fullname: "Virat Kohli",
+          age: 37,
+          team: "India"
+        }
+}
+ */
