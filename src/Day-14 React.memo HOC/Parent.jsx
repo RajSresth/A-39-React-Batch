@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useCallback } from "react";
 import "./parent.css";
 import Child from "./Child";
 
@@ -6,37 +6,13 @@ const Parent = () => {
   const [searchText, setSearchText] = useState("");
   const [count, setCount] = useState(0);
 
-  const findNthPrime = (n) => {
-    console.log("Hevy Calculation fn");
+  const obj = useMemo(() => ({ fullname: "Tinku Singh", age: 21 }), []);
 
-        if (n <= 0) {
-            return "Invalid Input";
-        }
+  const fn = useCallback(() => console.log("Clicked"), []);
 
-        let count = 0;
-        let num = 1;
+  // const fn = useMemo(() => () => console.log("clicked"), [])
 
-        while (count < n) {
-            num++;
-
-            let isPrime = true;
-
-            for (let i = 2; i <= Math.sqrt(num); i++) {
-                if (num % i === 0) {
-                    isPrime = false;
-                    break;
-                }
-            }
-
-            if (isPrime) {
-                count++;
-            }
-        }
-
-        return num;
-    }
-
-  const result = useMemo( () => findNthPrime(+searchText), [searchText])
+  console.log("Parent Render");
 
   return (
     <div className="parent__container">
@@ -49,17 +25,18 @@ const Parent = () => {
       />
       <div className="counter__container">
         <h3>Count: {count}</h3>
-        <button onClick={() => setCount(count + 1)}>Add</button>
+        <button
+          style={{ marginTop: "20px" }}
+          onClick={() => setCount(count + 1)}
+        >
+          Add
+        </button>
       </div>
       <div>
-        <Child result={result} />
+        <Child obj={obj} fn={fn} />
       </div>
     </div>
   );
 };
 
 export default Parent;
-
-
-
-

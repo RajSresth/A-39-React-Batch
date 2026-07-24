@@ -1,17 +1,20 @@
-import React from 'react'
+import React from "react";
 
-const Child = ({result}) => {
-  
-
+const Child = ({ obj,fn }) => {
+  console.log("Child Render");
   
   return (
-    <div className='child__container'>
+    <div className="child__container">
       <h3>Child Component</h3>
-      <h4>Result: {result}</h4>     
-    </div>
-  )
-}
+      <h4>Fullname: {obj.fullname}</h4>
+      <h4>Age: {obj.age}</h4>
 
+      <button style={{ marginTop: "20px",background:"blue" }} onClick={fn}>
+        Print
+      </button>
+    </div>
+  );
+};
 
 export default React.memo(Child);
 
