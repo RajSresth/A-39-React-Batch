@@ -23,15 +23,13 @@
 // import Wrong from "./Day-13 useEffect Hook Part-3/Wrong";
 // import ProductPage from "./Day-13 useEffect Hook Part-3/ProductPage";
 // import ToggleComponent from "./Day-14 useEffect vs useLayoutEffect/ToggleComponent";
-
-import Parent from "./Day-14 React.memo HOC/Parent";
+// import Parent from "./Day-14 React.memo HOC/Parent";
+import { RouterProvider } from "react-router-dom";
+import router from "./routes/router";
 
 const App = () => {
-  return (
-    <div id="app">
-      <Parent />
-    </div>
-  );
+  return <RouterProvider router={router} />;
+ 
 };
 
 export default App;
