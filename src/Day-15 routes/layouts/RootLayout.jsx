@@ -5,13 +5,11 @@ import { Outlet } from "react-router-dom";
 const RootLayout = () => {
   return (
     <div>
-      {/* Header */}
       <Header />
 
-      {/* Remaining Area */}
-      <div className="h-[calc(100vh-100px)] bg-pink-100">
+      <main className="h-[calc(100vh-100px)] w-full">
         <Outlet />
-      </div>
+      </main>
     </div>
   );
 };

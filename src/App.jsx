@@ -1,3 +1,52 @@
+import { RouterProvider } from "react-router-dom";
+import router from "./Day-15 routes/Router";
+
+const App = () => {
+  return <RouterProvider router={router} />
+ 
+};
+
+export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // import UserDetails from "./Day-1 jsx and components/UserDetails";
 // import UserInfo from "./Day-1 jsx and components/UserInfo";
 // import UserDetails from "./Day-2 Props/UserDetails";
@@ -24,12 +73,3 @@
 // import ProductPage from "./Day-13 useEffect Hook Part-3/ProductPage";
 // import ToggleComponent from "./Day-14 useEffect vs useLayoutEffect/ToggleComponent";
 // import Parent from "./Day-14 React.memo HOC/Parent";
-import { RouterProvider } from "react-router-dom";
-import router from "./routes/router";
-
-const App = () => {
-  return <RouterProvider router={router} />;
- 
-};
-
-export default App;
