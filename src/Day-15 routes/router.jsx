@@ -5,6 +5,8 @@ import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import Cart from "./pages/Cart";
 import NotFoundPage from "./components/NotFoundPage";
+import Signup from "./pages/auth/Signup";
+import Login from "./pages/auth/Login";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +28,14 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "/signup",
+    element: <Signup/>
+  },
+  {
+    path: "/login",
+    element: <Login />
+  }
 ]);
 
 export default router;
