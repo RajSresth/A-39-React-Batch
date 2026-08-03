@@ -36,7 +36,7 @@ const Login = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter email"
-              className="mt-2 w-full outline-0 rounded p-2   ring-1 focus:ring-1 focus:ring-purple-600"
+              className="mt-2 w-full outline-0 rounded p-2 ring-1 border-none ring-gray-400 focus:ring-1 focus:ring-purple-600"
               required
             />
           </div>
@@ -53,7 +53,7 @@ const Login = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="at least 8 characters"
-                  className="mt-2 w-full outline-0 rounded p-2  ring-1 focus:ring-1 focus:ring-purple-600"
+                  className="mt-2 w-full outline-0 rounded p-2 ring-1 border-none  ring-gray-400 focus:ring-1 focus:ring-purple-600"
                   required
                 />
                 <div

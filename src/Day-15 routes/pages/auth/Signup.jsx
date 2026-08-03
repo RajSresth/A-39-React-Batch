@@ -1,16 +1,46 @@
 import React, { useState } from "react";
-import { Form, Link } from "react-router-dom";
+import { Form, Link, useNavigate } from "react-router-dom";
 import { FaRegEye } from "react-icons/fa";
+import axios from "axios";
+
+const baseUrl = import.meta.env.VITE_BASEURL;
 
 const Signup = () => {
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [error, setError] = useState({
+    isError: false,
+    errorMessage: "",
+  });
+  const [pending, setPending] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleSignupForm = async (e) => {
+    setPending(true);
+    try {
+      const response = await axios.post(`${baseUrl}/api/v1/register`, {});
+      if (response.status === 201) {
+        navigate("/login", { replace: true });
+        setError({ ...error });
+      }
+    } catch (error) {
+      setError({
+        isError: true,
+        errorMessage: error.response?.data?.message || error.message,
+      });
+    } finally {
+      setPending(false);
+    }
+  };
+
   return (
     <div className="w-full h-screen flex justify-center items-center">
-      <form
+      <Form
         action=""
+        onSubmit={handleSignupForm}
         className="max-w-100 w-full space-y-6 border-2 bg-white border-gray-300 p-8 rounded-2xl"
       >
         <div>
@@ -20,6 +50,12 @@ const Signup = () => {
           <p className="text-center text-gray-500 text-sm font-medium">
             It will take 3 sec
           </p>
+
+          {error.isError && (
+            <div className="border-l-4 mt-2 h-8 py-1 px-3 bg-red-100 border-red-600 rounded">
+              {error.errorMessage}
+            </div>
+          ) }
         </div>
 
         <div className="flex flex-col gap-5">
@@ -33,7 +69,7 @@ const Signup = () => {
               value={fullname}
               onChange={(e) => setFullname(e.target.value)}
               placeholder="Enter fullname"
-              className="mt-2 w-full outline-0 rounded p-2   ring-1 focus:ring-1 focus:ring-purple-600"
+              className="mt-2 border w-full outline-0 rounded p-2  ring-1 border-none  ring-gray-400 focus:ring-1 focus:ring-purple-600"
               required
             />
           </div>
@@ -48,7 +84,7 @@ const Signup = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter email"
-              className="mt-2 w-full outline-0 rounded p-2   ring-1 focus:ring-1 focus:ring-purple-600"
+              className="mt-2 w-full outline-0 rounded p-2 ring-1 border-none  ring-gray-400 focus:ring-1 focus:ring-purple-600"
               required
             />
           </div>
@@ -63,7 +99,7 @@ const Signup = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="at least 8 characters"
-              className="mt-2 w-full outline-0 rounded p-2  ring-1 focus:ring-1 focus:ring-purple-600"
+              className="mt-2 w-full outline-0 rounded p-2 ring-1 border-none ring-gray-400 focus:ring-1 focus:ring-purple-600"
               required
             />
           </div>
@@ -73,8 +109,9 @@ const Signup = () => {
           <button
             type="submit"
             className="w-full p-2.5 bg-purple-600 font-semibold rounded-md text-white tracking-wide mb-3 hover:bg-purple-700 hover:cursor-pointer"
+            disabled={pending ? true : false}
           >
-            Signup
+            {pending ? "Submitting..." : "Signup"}
           </button>
           <p className="text-center text-gray-500">
             Already have an account?{" "}
@@ -86,7 +123,7 @@ const Signup = () => {
             </Link>
           </p>
         </div>
-      </form>
+      </Form>
     </div>
   );
 };
