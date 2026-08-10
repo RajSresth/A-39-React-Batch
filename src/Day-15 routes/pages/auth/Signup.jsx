@@ -18,10 +18,18 @@ const Signup = () => {
 
   const navigate = useNavigate();
 
-  const handleSignupForm = async (e) => {
+  const handleSignupForm = async () => {
     setPending(true);
     try {
-      const response = await axios.post(`${baseUrl}/api/v1/register`, {});
+      const response = await axios.post(
+        `${baseUrl}/register`,
+        {
+          fullname,
+          email,
+          password,
+        },
+        { withCredentials: true },
+      );
       if (response.status === 201) {
         navigate("/login", { replace: true });
         setError({ ...error });
@@ -55,7 +63,7 @@ const Signup = () => {
             <div className="border-l-4 mt-2 h-8 py-1 px-3 bg-red-100 border-red-600 rounded">
               {error.errorMessage}
             </div>
-          ) }
+          )}
         </div>
 
         <div className="flex flex-col gap-5">

@@ -1,17 +1,54 @@
 import React, { useState } from "react";
-import { Form, Link } from "react-router-dom";
+import { Form, Link, useNavigate } from "react-router-dom";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import axios from "axios";
 
+const baseUrl = import.meta.env.VITE_BASEURL;
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
+    const [error, setError] = useState({
+      isError: false,
+      errorMessage: "",
+    });
+
+    const [pending, setPending] = useState(false);
+
+    const navigate = useNavigate();
+
+    const handleLoginForm = async () => {
+      setPending(true);
+      try {
+        const response = await axios.post(
+          `${baseUrl}/login`,
+          {
+            email,
+            password,
+          },
+          { withCredentials: true },
+        );
+        if (response.status === 200) {
+          navigate("/dashboard", { replace: true });
+          setError({ ...error });
+        }
+      } catch (error) {
+        setError({
+          isError: true,
+          errorMessage: error.response?.data?.message || error.message,
+        });
+      } finally {
+        setPending(false);
+      }
+  };
+
    return (
     <div className="w-full h-screen flex justify-center items-center">
-      <form
+      <Form
         action=""
+        onSubmit={handleLoginForm}
         className="max-w-100 w-full space-y-9 border-2 bg-white border-gray-300 p-8 rounded-2xl"
       >
         <div>
@@ -21,6 +58,12 @@ const Login = () => {
           <p className="text-center text-gray-500 text-sm font-medium">
             It will take 3 sec
           </p>
+
+          {error.isError && (
+            <div className="border-l-4 mt-2 h-8 py-1 px-3 bg-red-100 border-red-600 rounded">
+              {error.errorMessage}
+            </div>
+          )}
         </div>
 
         <div className="flex flex-col gap-9">
@@ -83,7 +126,7 @@ const Login = () => {
             </Link>
           </p>
         </div>
-      </form>
+      </Form>
     </div>
   );
 }

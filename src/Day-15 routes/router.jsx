@@ -7,6 +7,7 @@ import Cart from "./pages/Cart";
 import NotFoundPage from "./components/NotFoundPage";
 import Signup from "./pages/auth/Signup";
 import Login from "./pages/auth/Login";
+import DashboardLayout from "./layouts/DashboardLayout";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />
+  },
+  {
+    path: "/dashboard",
+    element: <DashboardLayout/>
   }
 ]);
 
