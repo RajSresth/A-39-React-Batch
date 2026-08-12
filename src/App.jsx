@@ -1,6 +1,6 @@
 import { RouterProvider } from "react-router-dom";
 import router from "./Day-15 routes/Router";
-import authStore, { AuthProvider } from "./Day-15 routes/context/AuthContext";
+import { AuthProvider } from "./Day-15 routes/context/AuthContext";
 
 const App = () => {
   return (

@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext,useContext, useState, useEffect } from "react";
 
 // ! create authStore
 const authStore = createContext();
@@ -6,16 +6,16 @@ const authStore = createContext();
 // ! Auth Provider
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
     const storedUser = JSON.parse(localStorage.getItem("user"));
 
-    if (!storedUser) {
-      throw new Error("User is not present");
+    if (storedUser) 
+    {
+      setUser(storedUser);
     }
-    setUser(storedUser);
+    setLoading(false);
   }, []);
 
   const login = (userData) => {
@@ -30,11 +30,28 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <authStore.Provider
-      value={{ user, isAuthenticate: !!user, login, logout, loading }}
+      value={{
+        user,
+        isAuthenticate: !!user,
+        login,
+        logout,
+        loading,
+      }}
     >
       {children}
     </authStore.Provider>
   );
 };
 
-export default authStore;
+
+//! Custom Hook vs Normal js function
+export const useAuth = () => {
+  const context = useContext(authStore);
+  if(!context)
+  {
+    throw new Error("useAuth must be used inside auth provider");
+  }
+  return context;
+}
+
+

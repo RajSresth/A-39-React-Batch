@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-import authStore from "../context/AuthContext";
 
 const Header = () => {
   return (

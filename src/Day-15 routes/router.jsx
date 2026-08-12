@@ -5,9 +5,21 @@ import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import Cart from "./pages/Cart";
 import NotFoundPage from "./components/NotFoundPage";
+
+// Auth Pages
 import Signup from "./pages/auth/Signup";
 import Login from "./pages/auth/Login";
+
+// Protect Page
+import ProtectedRoute from "./ProtectedRoute";
+
+// Dashboard Pages
 import DashboardLayout from "./layouts/DashboardLayout";
+import DashboardHome from "./pages/dashboard/DashboardHome";
+import Profile from "./pages/dashboard/Profile";
+import Orders from "./pages/dashboard/Orders";
+import Settings from "./pages/dashboard/Settings";
+import Contact from "./pages/dashboard/Contact";
 
 const router = createBrowserRouter([
   {
@@ -38,8 +50,19 @@ const router = createBrowserRouter([
     element: <Login />
   },
   {
-    path: "/dashboard",
-    element: <DashboardLayout/>
+    element: <ProtectedRoute/>,
+    children:[
+      {
+        element:<DashboardLayout/>,
+        children: [
+          {path:"/dashboard", element:<DashboardHome/> },
+          {path:"/dashboard/profile", element: <Profile/>},
+          {path:"/dashboard/orders", element:<Orders/> },
+          {path:"/dashboard/settings", element:<Settings/> },
+          {path:"/dashboard/contact", element:<Contact/> },
+        ]
+      }
+    ]
   }
 ]);
 
