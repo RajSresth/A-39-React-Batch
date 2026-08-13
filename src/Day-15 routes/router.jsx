@@ -37,33 +37,37 @@ const router = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <Cart />,
+        element: (
+          <ProtectedRoute>
+            <Cart />
+          </ProtectedRoute>
+        ),
       },
     ],
   },
   {
     path: "/signup",
-    element: <Signup/>
+    element: <Signup />,
   },
   {
     path: "/login",
-    element: <Login />
+    element: <Login />,
   },
   {
-    element: <ProtectedRoute/>,
-    children:[
+    element: <ProtectedRoute />,
+    children: [
       {
-        element:<DashboardLayout/>,
+        element: <DashboardLayout />,
         children: [
-          {path:"/dashboard", element:<DashboardHome/> },
-          {path:"/dashboard/profile", element: <Profile/>},
-          {path:"/dashboard/orders", element:<Orders/> },
-          {path:"/dashboard/settings", element:<Settings/> },
-          {path:"/dashboard/contact", element:<Contact/> },
-        ]
-      }
-    ]
-  }
+          { path: "/dashboard", element: <DashboardHome /> },
+          { path: "/dashboard/profile", element: <Profile /> },
+          { path: "/dashboard/orders", element: <Orders /> },
+          { path: "/dashboard/settings", element: <Settings /> },
+          { path: "/dashboard/contact", element: <Contact /> },
+        ],
+      },
+    ],
+  },
 ]);
 
 export default router;

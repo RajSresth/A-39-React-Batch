@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Form, Link, useNavigate } from "react-router-dom";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import axios from "axios";
+import { useAuth } from "../../context/AuthContext";
 
 const baseUrl = import.meta.env.VITE_BASEURL;
 
@@ -9,15 +10,15 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState({
+    isError: false,
+    errorMessage: "",
+  });
+  const [pending, setPending] = useState(false);
 
-    const [error, setError] = useState({
-      isError: false,
-      errorMessage: "",
-    });
+  const navigate = useNavigate();
+  const {login} = useAuth()
 
-    const [pending, setPending] = useState(false);
-
-    const navigate = useNavigate();
 
     const handleLoginForm = async () => {
       setPending(true);
@@ -31,6 +32,8 @@ const Login = () => {
           { withCredentials: true },
         );
         if (response.status === 200) {
+          console.log(response?.data)
+          login(response?.data?.user);
           navigate("/dashboard", { replace: true });
           setError({ ...error });
         }
