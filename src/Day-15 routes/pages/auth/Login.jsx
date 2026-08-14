@@ -17,37 +17,36 @@ const Login = () => {
   const [pending, setPending] = useState(false);
 
   const navigate = useNavigate();
-  const {login} = useAuth()
+  const { login } = useAuth();
 
-
-    const handleLoginForm = async () => {
-      setPending(true);
-      try {
-        const response = await axios.post(
-          `${baseUrl}/login`,
-          {
-            email,
-            password,
-          },
-          { withCredentials: true },
-        );
-        if (response.status === 200) {
-          console.log(response?.data)
-          login(response?.data?.user);
-          navigate("/dashboard", { replace: true });
-          setError({ ...error });
-        }
-      } catch (error) {
-        setError({
-          isError: true,
-          errorMessage: error.response?.data?.message || error.message,
-        });
-      } finally {
-        setPending(false);
+  const handleLoginForm = async () => {
+    setPending(true);
+    try {
+      const response = await axios.post(
+        `${baseUrl}/auth/login`,
+        {
+          email,
+          password,
+        },
+        { withCredentials: true },
+      );
+      if (response.status === 200) {
+        console.log(response?.data);
+        login(response?.data?.user);
+        navigate("/dashboard", { replace: true });
+        setError({ ...error });
       }
+    } catch (error) {
+      setError({
+        isError: true,
+        errorMessage: error.response?.data?.message || error.message,
+      });
+    } finally {
+      setPending(false);
+    }
   };
 
-   return (
+  return (
     <div className="w-full h-screen flex justify-center items-center">
       <Form
         action=""
@@ -56,7 +55,7 @@ const Login = () => {
       >
         <div>
           <h2 className="text-2xl text-center text-purple-600 font-semibold">
-           Login
+            Login
           </h2>
           <p className="text-center text-gray-500 text-sm font-medium">
             It will take 3 sec
@@ -70,8 +69,6 @@ const Login = () => {
         </div>
 
         <div className="flex flex-col gap-9">
-         
-
           <div>
             <label htmlFor="email" className="font-semibold">
               Email<sup className="text-red-700 text-lg">*</sup>
@@ -93,22 +90,26 @@ const Login = () => {
             </label>
 
             <div className="relative">
-                <input
-                  type={showPassword? "text":"password"}
-                  id="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="at least 8 characters"
-                  className="mt-2 w-full outline-0 rounded p-2 ring-1 border-none  ring-gray-400 focus:ring-1 focus:ring-purple-600"
-                  required
-                />
-                <div
-                 onClick={() => setShowPassword(!showPassword)}
-                 className="absolute top-[50%] translate-[-30%] right-2 cursor-pointer">
-                  {showPassword? <FaRegEye size={22}/>: <FaRegEyeSlash size={22}/>}
-                </div>
+              <input
+                type={showPassword ? "text" : "password"}
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="at least 8 characters"
+                className="mt-2 w-full outline-0 rounded p-2 ring-1 border-none  ring-gray-400 focus:ring-1 focus:ring-purple-600"
+                required
+              />
+              <div
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute top-[50%] translate-[-30%] right-2 cursor-pointer"
+              >
+                {showPassword ? (
+                  <FaRegEye size={22} />
+                ) : (
+                  <FaRegEyeSlash size={22} />
+                )}
+              </div>
             </div>
-
           </div>
         </div>
 
@@ -120,7 +121,7 @@ const Login = () => {
             Login
           </button>
           <p className="text-center text-gray-500">
-           Create an Account?{" "}
+            Create an Account?{" "}
             <Link
               className="text-purple-500 font-medium hover:text-purple-600"
               to="/signup"
@@ -132,6 +133,6 @@ const Login = () => {
       </Form>
     </div>
   );
-}
+};
 
-export default Login
+export default Login;

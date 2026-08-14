@@ -22,7 +22,7 @@ const Signup = () => {
     setPending(true);
     try {
       const response = await axios.post(
-        `${baseUrl}/register`,
+        `${baseUrl}/auth/register`,
         {
           fullname,
           email,
